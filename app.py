@@ -19,25 +19,39 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-@app.route('/')
-def home_page():
+@app.route('/home')
+def home():
     return render_template('home.html')
 
 
-@app.route('/post', methods=['GET', 'POST'])
+@app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
     return render_template('add_post.html')
 
 
-@app.route('/year/<string:year>')
+@app.route('/year/<int:year>')
 def years(year):
-	render_template("years.html", year = year)
-
+	# query the database to get that year's content
+	cs_posts = session.query(Post).filter_by(year=year, topic="cs").all()
+	entrep_posts = session.query(Post).filter_by(year=year, topic="entrep").all()
+	return render_template("years.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=year)
+	#return render_template("years.html", year= year)
 
 @app.route('/protected', methods=["GET"])
 @login_required
 def protected():
     return render_template('protected.html')
+
+@app.route('/add-random-post')
+def add_something():
+	post = Post()
+	post.year=2
+	post.topic="entrep"
+	post.title="random entrep post"
+	post.text='random post text'
+	session.add(post)
+	session.commit()
+	return("<h1>Done</h1>")
 
 
 ###### LOGIN #######

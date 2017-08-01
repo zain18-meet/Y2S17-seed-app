@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-{% if year=="y1" %}
-	<title><title>
-}{%endif%}
+
+	<title>Year {{year}}</title>
+
 </head>
 <body>
 
+{% for cs_post in cs_posts %}
+<div>
+<h1> {{ cs_post.title }} </h1>
+{{ cs_post.text }}
+{{ cs_post.created_at }}
+</div>
+{% endfor %}
+{% for entrep_post in entrep_posts %}
+<div>
+{{ entrep_post.title }} </h1>
+{{ entrep_post.text }}
+{{ entrep_post.created_at }}
+</div>
+{% endfor %}
 </body>
 </html>

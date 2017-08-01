@@ -41,6 +41,8 @@ class Post(Base):
     y1_entrep = Column(Boolean, default=False)
     y2_entrep = Column(Boolean, default=False)
     y3_entrep = Column(Boolean, default=False)
+    year = Column(Integer)
+    topic = Column(String)
 
 
     # ADD YOUR FIELD BELOW ID
