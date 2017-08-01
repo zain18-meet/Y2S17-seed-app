@@ -11,7 +11,11 @@ from login import login_manager, login_handler, logout_handler
 login_manager.init_app(app)
 
 # SQLAlchemy
+<<<<<<< HEAD
 from model import Base, Post, User
+=======
+from model import Base, post
+>>>>>>> 11bee1f294bc3cb3ab9e618a288f9ed3c3c2efbe
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 engine = create_engine('sqlite:///project.db')
@@ -19,6 +23,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+<<<<<<< HEAD
 @app.route('/')
 def home_page():
     return render_template('home_page.html')
@@ -52,3 +57,8 @@ def protected():
 
 
     
+=======
+
+@app.route('/')
+
+>>>>>>> 11bee1f294bc3cb3ab9e618a288f9ed3c3c2efbe
