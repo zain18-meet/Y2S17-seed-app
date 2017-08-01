@@ -45,6 +45,11 @@ def login():
 def logout():
   return logout_handler()
 
+@app.route('/year/<string:year>')
+def years(year):
+
+	render_template("years.html", year = year)
+
 
 @app.route('/protected', methods=["GET"])
 @login_required
