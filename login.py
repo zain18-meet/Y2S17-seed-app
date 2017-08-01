@@ -38,7 +38,7 @@ def login_handler(request):
         user = user.first()
         if user.check_password(pw):
             login_user(user)
-            return redirect(url_for('protected'))
+            return redirect(url_for('home'))
         return 'Wrong Password'
     return 'Bad login'
 
