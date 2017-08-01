@@ -9,13 +9,24 @@
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </head>
+
   <body>
 
+  <div id = login>
+  <center>
+    <h1>myMEET</h1>
+
     <form action='login' method='POST'>
-      <input type='text' name='email' id='email' placeholder='email'></input>
-      <input type='password' name='pw' id='pw' placeholder='password'></input>
-      <input type='submit' name='submit'></input>
-    </form>
+      <input type='text' name='email' id='email' placeholder='email'></input> <br>
+      <input type='password' name='pw' id='pw' placeholder='password'></input> <br>
+      <input type='submit' name='submit' value="Login"></input>
+    </form> 
+
+    <p>OR</p>
+
+    <a href="">Sign Up</a>
+  </center>
+  </div>
 
 </html>
 
