@@ -16,6 +16,8 @@ class User(UserMixin, Base):
     email         = Column(String)
     pw_hash       = Column(String)
     authenticated = Column(Boolean, default=False)
+    name          = Column(String)
+    userspos      = Column(Boolean)
     gender        = Column(String)
     name = Column(String)
     userspos= Column(String)
@@ -46,7 +48,12 @@ class Post(Base):
     y3_entrep = Column(Boolean, default=False)
     year = Column(Integer)
     topic = Column(String)
+
+    def __repr__(self):
+        return "<Post: %s, title: %s" % (
+            self.id, self.title)
     
+
 
 
     # ADD YOUR FIELD BELOW ID

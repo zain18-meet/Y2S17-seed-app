@@ -26,61 +26,19 @@ def home():
 
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
-
-	post = Post()
-	post.year= request.form.get("year")
-	post.title= request.form.get("title")
-	post.text= request.form.get("text")
-	post.url= request.form.get("url")
-
-	y1_cs=request.form.get("Y1-CS")
-	if y1_cs==True:
-		post.y1_cs=True
-
+	if request.method=='GET':
+		return render_template('add_post.html')
 	else:
-		post.y1_cs=False
-
-	y1_entrep=request.form.get("Y1-E")
-	if y1_entrep==True:
-		post.y1_entrep=True
-
-	else:
-		post.y1_entrep=False
-
-
-	y2_cs=request.form.get("Y2-CS")
-	if y2_cs==True:
-		post.y2_cs=True
-
-	else:
-		post.y2_cs=False
+		post = Post(title=request.form.get("title"), text=request.form.get("text"),
+			 url= request.form.get("url"), y1_cs=request.form.get("Y1-CS"),
+			 y2_cs=request.form.get("Y2-CS"), y3_cs=request.form.get("Y3-CS"),
+			 y1_entrep=request.form.get("Y1-E"), y2_entrep=request.form.get("Y2-E"),
+			 y3_entrep=request.form.get("Y3-E"))		
+		session.add(post)
+		session.commit()
+		return redirect(url_for('home'))
 
 
-	y2_entrep=request.form.get("Y2-E")
-	if y2_entrep==True:
-		post.y2_entrep=True
-
-	else:
-		post.y2_entrep=False
-
-	y3_cs=request.form.get("Y3-CS")
-	if y3_cs==True:
-		post.y3_cs=True
-
-	else:
-		post.y3_cs=False
-
-	y3_entrep=request.form.get("Y3-E")
-	if y3_entrep==True:
-		post.y3_entrep =True
-
-	else:
-		post.y3_entrep=False
-
-	session.add(post)
-	session.commit()
-
-	return render_template('add_post.html')
 
 
 @app.route('/year/<int:year>')
