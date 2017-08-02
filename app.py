@@ -33,7 +33,9 @@ def add_post():
 			 url= request.form.get("url"), y1_cs=request.form.get("Y1-CS"),
 			 y2_cs=request.form.get("Y2-CS"), y3_cs=request.form.get("Y3-CS"),
 			 y1_entrep=request.form.get("Y1-E"), y2_entrep=request.form.get("Y2-E"),
-			 y3_entrep=request.form.get("Y3-E"))		
+			 y3_entrep=request.form.get("Y3-E"))
+		print("adding post")
+		print(request.form.get("Y1-CS"))	
 		session.add(post)
 		session.commit()
 		return redirect(url_for('home'))
@@ -41,17 +43,17 @@ def add_post():
 
 
 
-@app.route('/year/<int:year>')
-def years(year):
-	# query the database to get that year's content
-	cs_posts = session.query(Post).filter_by(year=year, topic="cs").all()
-	entrep_posts = session.query(Post).filter_by(year=year, topic="entrep").all()
-	return render_template("years.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=year)
-	#return render_template("years.html", year= year)
 
 @app.route('/Y1')
 def y1():
-	return render_template('Y1.html')
+	# cs_posts = session.query(Post).filter_by(y1_cs=True).all()
+	cs_posts = session.query(Post).all()
+	entrep_posts = []
+	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
+	print(cs_posts)
+	print(entrep_posts)
+	return render_template("Y1.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=1)
+	
 
 @app.route('/Y2')
 def y2():
