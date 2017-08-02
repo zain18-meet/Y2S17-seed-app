@@ -34,19 +34,20 @@
 
 <center>
 
-<h1>Create Post</h1>
-<br><br><br>
+<br><br><br><br><br>
+<span class="w3-text-black" style="font-size:65px">Post</span>
+<br><br>
 
 <form action="{{url_for('add_post')}}" method="post">
 	<input type="text" name="title" placeholder="Title"><br><br><br>
-	<textarea placeholder="Write Text Here"></textarea><br><br><br>
+	<textarea name="textarea" placeholder="Write Text Here"></textarea><br><br><br>
 	<input type="text" name="url" placeholder="Place Url Here"><br><br><br>
-	<input type="checkbox" name="Y1-CS" value= "Y1-CS">Y1-CS
-	<input type="checkbox" name="Y2-CS" value= "Y2-CS">Y2-CS
-	<input type="checkbox" name="Y3-CS" value= "Y3-CS">Y3-CS<br>
-	<input type="checkbox" name="Y1-E" value= "Y1-E">Y1-E
-	<input type="checkbox" name="Y2-E" value= "Y2-E">Y2-E
-	<input type="checkbox" name="Y3-E" value= "Y3-E">Y3-E<br><br>
+	<input type="checkbox" name="Y1-CS" value= "False">Y1-CS
+	<input type="checkbox" name="Y2-CS" value= "False">Y2-CS
+	<input type="checkbox" name="Y3-CS" value= "False">Y3-CS<br>
+	<input type="checkbox" name="Y1-E" value= "False">Y1-E
+	<input type="checkbox" name="Y2-E" value= "False">Y2-E
+	<input type="checkbox" name="Y3-E" value= "False">Y3-E<br><br>
 	<input type="submit" name="submit" value="Post">
 </form>
 

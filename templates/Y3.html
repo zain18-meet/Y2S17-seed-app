@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-<title>myMeet.Y3</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<head>
+<title>myMeet Y3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/stylesheet.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<!--   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+
+</head>
 
 
 <body>
@@ -13,16 +24,16 @@
 <div class="w3-top">
   <div class="w3-row w3-padding w3-darkr">
     <div class="w3-col s3">
-      <a href="/" class="w3-button w3-block w3-black">HOME</a>
+      <a href="/" class="w3-button w3-block w3-darkr">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y1" class="w3-button w3-block w3-black">Y1</a>
+      <a href="/Y1" class="w3-button w3-block w3-darkr">Y1</a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y2" class="w3-button w3-block w3-black">Y2</a>
+      <a href="/Y2" class="w3-button w3-block w3-darkr">Y2</a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y3" class="w3-button w3-block w3-black">Y3</a>
+      <a href="/Y3" class="w3-button w3-block w3-darkr">Y3</a>
     </div>
   </div>
 </div>
@@ -45,29 +56,22 @@
     </div>
 
     <div id="Entrepreneurship" class="w3-container menu w3-padding-48 w3-card-2">
-      <h5>Lean Canvas instructions</h5>
-      <p class="w3-text-grey"><a href="url">https://leanstack.com/LeanCanvas.pdf</a></p><br>
-     <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
-    <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
-      <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
-      <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
+
+      {% for post in entrep_posts %}
+      <h5>{{post.title}}<h5><br>
+      <p>{{post.textarea}}</p><br>
+      <a href="{{post.url}}">{{post.url}}</a>
+      {% endfor %}
+
     </div>
 
     <div id="CS" class="w3-container menu w3-padding-48 w3-card-2">
-    <h5>CSS cheat sheet</h5>
-      <p class="w3-text-grey"><a href="url">https://websitesetup.org/css3-cheat-sheet/</a></p><br>
-      <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
-      <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
-      <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
-      <h5>Text</h5>
-      <p class="w3-text-grey"><a href="url">sample_link.com</a></p><br>
+
+      {% for post in cs_posts %}
+      <h5>{{post.title}}<h5><br>
+      <p>{{post.textarea}}</p><br>
+      <a href="{{post.url}}">{{post.url}}</a>
+      {% endfor %}
 
 <script>
 

@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>myMeet Stylesheet</title>
-</head>
-<body>
-
-<p>/* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
+/* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
@@ -217,13 +210,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-text-teal{color:#009688!important}
 .w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover{color:#f1f1f1!important}
 .w3-text-dark-grey,.w3-hover-text-dark-grey:hover,.w3-text-dark-gray,.w3-hover-text-dark-gray:hover{color:#3a3a3a!important}
+
+.w3-text-darkr{color:#720E07!important}
+
 .w3-border-red,.w3-hover-border-red:hover{border-color:#f44336!important}
 .w3-border-green,.w3-hover-border-green:hover{border-color:#4CAF50!important}
 .w3-border-blue,.w3-hover-border-blue:hover{border-color:#2196F3!important}
 .w3-border-yellow,.w3-hover-border-yellow:hover{border-color:#ffeb3b!important}
 .w3-border-white,.w3-hover-border-white:hover{border-color:#fff!important}
 .w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}
-.w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#bbb!important}</p>
-
-</body>
-</html>
+.w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#bbb!important}

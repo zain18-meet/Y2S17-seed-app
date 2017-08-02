@@ -18,7 +18,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-@app.route('/home')
+@app.route('/')
 def home():
 	return render_template('home.html')
 
@@ -47,8 +47,8 @@ def add_post():
 @app.route('/Y1')
 def y1():
 	# cs_posts = session.query(Post).filter_by(y1_cs=True).all()
-	cs_posts = session.query(Post).all()
-	entrep_posts = []
+	cs_posts = session.query(Post).filter_by(y1_cs=True).all()
+	entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
 	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
 	print(cs_posts)
 	print(entrep_posts)
@@ -57,11 +57,21 @@ def y1():
 
 @app.route('/Y2')
 def y2():
-	return render_template('Y2.html')
+	cs_posts = session.query(Post).filter_by(y2_cs=True).all()
+	entrep_posts = session.query(Post).filter_by(y2_entrep=True).all()
+	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
+	print(cs_posts)
+	print(entrep_posts)
+	return render_template("Y2.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=2)
 
 @app.route('/Y3')
 def y3():
-	return render_template('Y3.html')
+	cs_posts = session.query(Post).filter_by(y3_cs=True).all()
+	entrep_posts = session.query(Post).filter_by(y3_entrep=True).all()
+	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
+	print(cs_posts)
+	print(entrep_posts)
+	return render_template("Y3.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=3)
 
 @app.route('/protected', methods=["GET"])
 @login_required
