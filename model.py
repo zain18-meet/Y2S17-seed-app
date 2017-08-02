@@ -16,6 +16,7 @@ class User(UserMixin, Base):
     email         = Column(String)
     pw_hash       = Column(String)
     authenticated = Column(Boolean, default=False)
+    gender        = Column(String)
 
     def __repr__(self):
       return "<User: %s, password: %s>" % (
@@ -42,7 +43,6 @@ class Post(Base):
     y2_entrep = Column(Boolean, default=False)
     y3_entrep = Column(Boolean, default=False)
     year = Column(Integer)
-    topic = Column(String)
 
 
     # ADD YOUR FIELD BELOW ID

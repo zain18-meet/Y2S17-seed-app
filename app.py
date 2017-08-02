@@ -21,12 +21,20 @@ session = DBSession()
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+	return render_template('home.html')
+
 
 
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
-    return render_template('add_post.html')
+
+	post = Post()
+	post.year= session.query(Post)
+	post.title= session.query(Post)
+	post.text= session.query(Post)
+	post.url= session.query(Post)
+
+	return render_template('add_post.html')
 
 
 @app.route('/year/<int:year>')
@@ -40,12 +48,12 @@ def years(year):
 @app.route('/protected', methods=["GET"])
 @login_required
 def protected():
-    return render_template('protected.html')
+	return render_template('protected.html')
 
 @app.route('/add-random-post')
 def add_something():
 	post = Post()
-	post.year=2
+	post.year=3
 	post.topic="entrep"
 	post.title="random entrep post"
 	post.text='random post text'
@@ -58,8 +66,11 @@ def add_something():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    return login_handler(request)
+	return login_handler(request)
 
+@app.route('/sign_up', methods=['GET','POST'])
+def sign_up():
+	return render_template('sign_up.html')
 
 @app.route('/logout')
 def logout():

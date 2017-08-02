@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<title>myMEET/Sign Up</title>
-	</head>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
 
 	<body>
 
 		<center>
 
-		<h1>myMEET<br>Sign Up Page</h1>
+		<h1>myMEET<br>
+		Sign Up Page</h1>
 
-		<form>
+<form action="{{url_for('home')}}" method="POST">
 
 			<input type="text" name="name" placeholder="Name"><br>
 			<input type="text" name="email" id = "pw" placeholder="Email"><br>
 			<input type="password" name="pw" id = "pw" placeholder="Password"><br>
-			<input type="submit" name="submit" value="Sign Up">
-
 			<input type="radio" name="member" value="student">Student
 			<input type="radio" name="member" value="staff">Staff
+			<input type="submit" name="submit" value="Sign Up">
 
-		</form>
+
+</form>
 
 		<p>OR</p>
 
-		<a href="">Login</a>
+		<a href="login.html">BACK</a>
 
         </center>
 	</body>
