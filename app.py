@@ -18,7 +18,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-@app.route('/')
+@app.route('/home')
 def home():
 	return render_template('home.html')
 
@@ -90,13 +90,20 @@ def login():
 
 @app.route('/sign_up', methods=['GET','POST'])
 def sign_up():
-	name = request.form.get(name)
-	email = request.form.get(email)
-	pw = request.form.get(pw_hash)
-	member=request.form.get(member)
+	if request.method == "GET":
+		return render_template('sign_up.html')
+	else:
+		new_name   = request.form.get('name')
+		new_email  = request.form.get('email')
+		new_pw     = request.form.get('pw')
+		new_userspos = request.form.get('userspos')
+		
+		u = User(email=new_email,name=new_name,pw_hash=new_pw,userspos=new_userspos)
+		u.set_password(new_pw)
+		session.add(u)
+		session.commit()
+		return redirect(url_for('home'))
 
-
-	return render_template('sign_up.html')
 
 @app.route('/logout')
 def logout():
