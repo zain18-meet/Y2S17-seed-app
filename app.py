@@ -1,4 +1,3 @@
-# flask imports
 from flask import Flask, Response, render_template, request, redirect, url_for
 
 # flask setup
