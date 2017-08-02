@@ -18,7 +18,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-@app.route('/home')
+@app.route('/')
 def home():
 	return render_template('home.html')
 
