@@ -1,71 +1,84 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-	<title>"myMEET/home"</title>
+
+<title>myMeet</title>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
 </head>
+
 <body>
 
-<h1>myMEET</h1>
-<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+<style> 
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
 }
-
-li {
-    float: left;
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("http://meet.mit.edu/wp-content/uploads/2016/05/home-bg-new.jpg");
+    min-height: 75%;
 }
-
-li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-li a.active {
-    color: white;
-    background-color: #4CAF50;
+.menu {
+    display: none;
 }
 </style>
-</head>
-<body>
 
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="/year/1">Y1</a>
-</li>
-  <li><a href="/year/2">Y2</a></li>
-  <li><a href="/year/3">Y3</a></li>
-   <li><a href="/add_post">STUFF</a>
-</li>
-</ul>
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-darkr">
+    <div class="w3-col s3">
+      <a href="/home" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/Y1" class="w3-button w3-block w3-black">Y1</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/Y2" class="w3-button w3-block w3-black">Y2</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/Y3" class="w3-button w3-block w3-black">Y3</a>
+     
+    </div>
+  </div>
+</div>
 
-	<!--<table>
-		<tr>
-			<th>
-				<a href="/year/2">Y1</a>
-				<a href="/year/2">Y2</a>
-				<a href="/year/3">Y3</a>
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  
+    
 
-				<a href="/add_post">Staff</a> 
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">myMEET</span>
+  </div>
+  
+   
+ 
+</header>
 
-			</th>
-		</tr>
-	</table>-->
-	<p>Welcome to myMEET! This is a website which is used as a platform for MEET staff and instructors to post and share the materials learned in class with the Meet students. The staff is able to post links to slideshows, documents, and videos discussed in class. myMeet is useful for any student who wants to review the materials learned in class and students who missed classes during the summer or during the yearlong.</p>
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
 
-	<p>myMeet was created and coded by Y2 students [class of 2018] as part of the CS summer project, in purpose to share knowlage and make learning material more accsessable and easy to students. </p>
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h3 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT MYMEET</span></h3>
+    <p>Welcome to myMeet! This is a website which is used as a platform for MEET staff and instructors to post and share the materials learned in class with the Meet students. The staff is able to post links to slideshows, documents, and videos discussed in class. myMeet is useful for any student who wants to review the materials learned in class and students who missed classes during the summer or during the yearlong.</p>
+    <p>myMeet was created and coded by Y2 students [class of 2018] as part of the CS summer project, in purpose to share knowlage and make learning material more accsessable and easy to students.</p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>myMeet crew: Zain Al Qalawi, Alicia Kamien, Sham Shalabi, Neomi Levy-Ashkenazi and Bassam Abu Ahmad</i></p>
+      
+    </div>
+    <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/18486385_10154649180342507_4675115368385446911_n.jpg?oh=7ad0d9611e8c20c0b67aac4d24b98f38&oe=5A36D0D9" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+
+
+</script>
+</div>
 </body>
 </html>
-
