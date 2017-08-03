@@ -18,7 +18,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-@app.route('/')
+@app.route('/home')
 @login_required
 def home():
 	return render_template('home.html', current_user = current_user)
@@ -97,7 +97,7 @@ def style():
 
 ###### LOGIN #######
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
 	return login_handler(request)
 

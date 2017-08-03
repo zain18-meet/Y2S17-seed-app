@@ -4,10 +4,15 @@
 <head>
 
 <title>myMEET Posts</title>
+  
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/stylesheet.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </head>
 
@@ -37,19 +42,19 @@
 <center>
 
 <br><br><br><br><br>
-<span class="w3-text-black" style="font-size:65px">Post</span>
+<span class="w3-text-white" style="font-size:65px">Post to myMEET</span>
 <br><br>
 
 <form action="{{url_for('add_post')}}" method="post">
 	<input type="text" name="title" placeholder="Title"><br><br><br>
 	<textarea name="text" placeholder="Write Text Here"></textarea><br><br><br>
 	<input type="text" name="url" placeholder="Place Url Here"><br><br><br>
-	<input type="checkbox" name="Y1-CS" value= "False">Y1-CS
-	<input type="checkbox" name="Y2-CS" value= "False">Y2-CS
-	<input type="checkbox" name="Y3-CS" value= "False">Y3-CS<br>
-	<input type="checkbox" name="Y1-E" value= "False">Y1-E
-	<input type="checkbox" name="Y2-E" value= "False">Y2-E
-	<input type="checkbox" name="Y3-E" value= "False">Y3-E<br><br>
+	<input type="checkbox" name="Y1-CS" value= "False"><span class="w3-text-white" style="font-size:12px">Y1-CS</span>
+	<input type="checkbox" name="Y2-CS" value= "False"><span class="w3-text-white" style="font-size:12px">Y2-CS</span>  
+	<input type="checkbox" name="Y3-CS" value= "False"><span class="w3-text-white" style="font-size:12px">Y3-CS</span><br>
+	<input type="checkbox" name="Y1-E" value= "False"><span class="w3-text-white" style="font-size:12px">Y1-E</span>  
+	<input type="checkbox" name="Y2-E" value= "False"><span class="w3-text-white" style="font-size:12px">Y2-E</span>  
+	<input type="checkbox" name="Y3-E" value= "False"><span class="w3-text-white" style="font-size:12px">Y3-E</span><br><br>
 	<input type="submit" name="submit" value="Post">
 </form>
 

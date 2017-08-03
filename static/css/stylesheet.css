@@ -211,6 +211,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover{color:#f1f1f1!important}
 .w3-text-dark-grey,.w3-hover-text-dark-grey:hover,.w3-text-dark-gray,.w3-hover-text-dark-gray:hover{color:#3a3a3a!important}
 
+.w3-text-darkr,.w3-hover-text-darkr:hover,.w3-text-darkr,.w3-hover-text-darkr:hover{color:#720E07!important}
 .w3-text-darkr{color:#720E07!important}
 
 .w3-border-red,.w3-hover-border-red:hover{border-color:#f44336!important}
@@ -221,4 +222,3 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}
 .w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#bbb!important}
 
-body {background-color:#720E07;}

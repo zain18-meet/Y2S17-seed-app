@@ -24,7 +24,7 @@
 <div class="w3-top">
   <div class="w3-row w3-padding w3-darkb">
     <div class="w3-col s3">
-      <a href="/" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
+      <a href="/home" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
 
     </div>
     <div class="w3-col s3">
@@ -36,9 +36,11 @@
     <div class="w3-col s3">
       <a href="/Y3" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y3</span></a>
     </div>
+    {% if current_user.userpos == "staff" %}
     <div class="w3-col s3">
       <a href="/add_post" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">POST</span></a>
     </div>
+    {% endif %}
   </div>
 </div>
 
@@ -90,10 +92,10 @@ function openMenu(evt, menuName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+     tablinks[i].className = tablinks[i].className.replace(" w3-darkr", "");
   }
   document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+  evt.currentTarget.firstElementChild.className += " w3-darkr";
 }
 document.getElementById("myLink").click();
 </script>
