@@ -22,21 +22,26 @@
 
 <!-- Links (sit on top) -->
 <div class="w3-top">
-  <div class="w3-row w3-padding w3-darkr">
+  <div class="w3-row w3-padding w3-darkb">
     <div class="w3-col s3">
-      <a href="/" class="w3-button w3-block w3-darkr">HOME</a>
+      <a href="/" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
+
     </div>
     <div class="w3-col s3">
-      <a href="/Y1" class="w3-button w3-block w3-darkr">Y1</a>
+      <a href="/Y1" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y1</span></a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y2" class="w3-button w3-block w3-darkr">Y2</a>
+      <a href="/Y2" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y2</span></a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y3" class="w3-button w3-block w3-darkr">Y3</a>
+      <a href="/Y3" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y3</span></a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/add_post" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">POST</span></a>
     </div>
   </div>
 </div>
+
 
 <!-- Classes Container -->
 <br>
@@ -59,7 +64,7 @@
 
       {% for post in entrep_posts %}
       <h5>{{post.title}}<h5><br>
-      <p>{{post.textarea}}</p><br>
+      <p>{{post.text}}</p><br>
       <a href="{{post.url}}">{{post.url}}</a>
       {% endfor %}
 
@@ -69,7 +74,7 @@
 
       {% for post in cs_posts %}
       <h5>{{post.title}}<h5><br>
-      <p>{{post.textarea}}</p><br>
+      <p>{{post.text}}</p><br>
       <a href="{{post.url}}">{{post.url}}</a>
       {% endfor %}
 

@@ -16,7 +16,6 @@ class User(UserMixin, Base):
     pw_hash       = Column(String)
     authenticated = Column(Boolean, default=False)
     name          = Column(String)
-    gender        = Column(String)
     name          = Column(String)
     userspos      = Column(String)
 

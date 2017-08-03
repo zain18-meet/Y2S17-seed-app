@@ -13,23 +13,25 @@
 
 <!-- Links (sit on top) -->
 <div class="w3-top">
-  <div class="w3-row w3-padding w3-darkr">
+  <div class="w3-row w3-padding w3-darkb">
     <div class="w3-col s3">
-      <a href="/" class="w3-button w3-block w3-black">HOME</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="/Y1" class="w3-button w3-block w3-black">Y1</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="/Y2" class="w3-button w3-block w3-black">Y2</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="/Y3" class="w3-button w3-block w3-black">Y3</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="/add_post" class="w3-button w3-block w3-black">POST</a>
-     </div>
+      <a href="/" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
 
+    </div>
+    <div class="w3-col s3">
+      <a href="/Y1" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y1</span></a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/Y2" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y2</span></a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/Y3" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y3</span></a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/add_post" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">POST</span></a>
+    </div>
+  </div>
+</div>
 <body>
 
 <center>
@@ -40,7 +42,7 @@
 
 <form action="{{url_for('add_post')}}" method="post">
 	<input type="text" name="title" placeholder="Title"><br><br><br>
-	<textarea name="textarea" placeholder="Write Text Here"></textarea><br><br><br>
+	<textarea name="text" placeholder="Write Text Here"></textarea><br><br><br>
 	<input type="text" name="url" placeholder="Place Url Here"><br><br><br>
 	<input type="checkbox" name="Y1-CS" value= "False">Y1-CS
 	<input type="checkbox" name="Y2-CS" value= "False">Y2-CS

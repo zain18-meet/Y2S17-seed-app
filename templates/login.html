@@ -4,7 +4,7 @@
   <head>
       <title>Login page</title>
       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/stylesheet.css') }}">
 
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
@@ -18,8 +18,8 @@
     <h1>myMEET</h1>
 
     <form action='login' method='POST'>
-      <input type='text' name='email' id='email' placeholder='email'></input> <br>
-      <input type='password' name='pw' id='pw' placeholder='password'></input> <br>
+      <input type='text' name='email' id='email' placeholder='email' required></input> <br>
+      <input type='password' name='pw' id='pw' placeholder='password' required></input> <br>
       <input type='submit' name='submit' value="Login"></input>
     </form> 
 
