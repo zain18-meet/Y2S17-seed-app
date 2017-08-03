@@ -109,14 +109,14 @@ def sign_up():
 		new_name   = request.form.get('name')
 		new_email  = request.form.get('email')
 		new_pw     = request.form.get('pw')
-		new_userspos = request.form.get('userspos')
+		new_userspos = request.form.get('memberz')
 
 		
 		u = User(email=new_email,name=new_name,pw_hash=new_pw,userspos=new_userspos)
 		u.set_password(new_pw)
 		session.add(u)
 		session.commit()
-		return redirect(url_for('home'))
+		return redirect(url_for('login'))
 
 
 @app.route('/logout')
