@@ -6,7 +6,7 @@ app.config["SECRET_KEY"] = "ITSASECRET"
 
 # flask-login imports
 from flask_login import login_required, current_user
-from login import login_manager, login_handler, logout_handler
+from login import login_manager, login_handler, logout_handler, sign_up_handler
 login_manager.init_app(app)
 
 # SQLAlchemy
@@ -106,17 +106,7 @@ def sign_up():
 	if request.method == "GET":
 		return render_template('sign_up.html')
 	else:
-		new_name   = request.form.get('name')
-		new_email  = request.form.get('email')
-		new_pw     = request.form.get('pw')
-		new_userspos = request.form.get('memberz')
-
-		
-		u = User(email=new_email,name=new_name,pw_hash=new_pw,userspos=new_userspos)
-		u.set_password(new_pw)
-		session.add(u)
-		session.commit()
-		return redirect(url_for('login'))
+		return sign_up_handler(request)
 
 
 @app.route('/logout')
