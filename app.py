@@ -19,8 +19,9 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 @app.route('/')
+@login_required
 def home():
-	return render_template('home.html')
+	return render_template('home.html', current_user = current_user)
 
 
 
@@ -109,6 +110,7 @@ def sign_up():
 		new_email  = request.form.get('email')
 		new_pw     = request.form.get('pw')
 		new_userspos = request.form.get('userspos')
+
 		
 		u = User(email=new_email,name=new_name,pw_hash=new_pw,userspos=new_userspos)
 		u.set_password(new_pw)

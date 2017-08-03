@@ -35,9 +35,11 @@
     <div class="w3-col s3">
       <a href="/Y3" class="w3-button w3-block w3-darkr">Y3</a>
     </div>
+    {% if current_user.userspos == "staff" %}
     <div class="w3-col s3">
       <a href="/add_post" class="w3-button w3-block w3-darkr">POST</a>
     </div>
+    {% endif %}
   </div>
 </div>
 
