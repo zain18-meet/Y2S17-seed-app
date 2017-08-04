@@ -10,18 +10,13 @@
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
-  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
 </head>
 
 <!-- Links (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-darkb">
     <div class="w3-col s3">
-      <a href="/" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
-
+      <a href="/home" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
     </div>
     <div class="w3-col s3">
       <a href="/Y1" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y1</span></a>
@@ -42,13 +37,13 @@
 <center>
 
 <br><br><br><br><br>
-<span class="w3-text-white" style="font-size:65px">Post to myMEET</span>
+<span class="w3-text-white" style="font-size:65px">Post to <span class="w3-text-white" style="font-size:90px">my</span><span class="w3-text-darkr" style="font-size:90px">M</span><span class="w3-text-white" style="font-size:90px">EET</span></span>
 <br><br>
 
 <form action="{{url_for('add_post')}}" method="post">
 	<input type="text" name="title" placeholder="Title"><br><br><br>
 	<textarea name="text" placeholder="Write Text Here"></textarea><br><br><br>
-	<input type="text" name="url" placeholder="Place Url Here"><br><br><br>
+	<input type="text" name="url" placeholder="Place FULL URL: ex. httpd//.."><br><br><br>
 	<input type="checkbox" name="Y1-CS" value= "False"><span class="w3-text-white" style="font-size:12px">Y1-CS</span>
 	<input type="checkbox" name="Y2-CS" value= "False"><span class="w3-text-white" style="font-size:12px">Y2-CS</span>  
 	<input type="checkbox" name="Y3-CS" value= "False"><span class="w3-text-white" style="font-size:12px">Y3-CS</span><br>

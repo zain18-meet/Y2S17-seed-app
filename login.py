@@ -34,6 +34,7 @@ def login_handler(request):
     email = request.form.get('email')
     pw    = request.form.get('pw')
     user  = session.query(User).filter_by(email=email) 
+
     if user.count() == 1:
         user = user.first()
         if user.check_password(pw):
@@ -53,12 +54,12 @@ def sign_up_handler(request):
     session.add(u)
     session.commit()
     login_user(u)
-    return redirect(url_for('home'))
+    return redirect('/')
 
 
 def logout_handler():
     logout_user()
-    return 'Logged out'
+    return redirect("/")
 
 
 

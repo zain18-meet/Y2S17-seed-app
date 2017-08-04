@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>myMEET/Sign Up</title>
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
-      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	<title>myMEET/Sign Up</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
-	<body>
+	<body class="bgimgs">
 
 		<center>
 
-		<h1>myMEET<br>
-		Sign Up Page</h1>
+		<span class="w3-text-white" style="font-size:90px">my</span><span class="w3-text-darkr" style="font-size:90px">M</span><span class="w3-text-white" style="font-size:90px">EET</span><br><h1>Sign Up Page</h1>
 
 		<form action="{{url_for('sign_up')}}" method="POST">
 
 			<input type="text" name="name" placeholder="Name"><br>
 			<input type="text" name="email" id = "pw" placeholder="Email"><br>
 			<input type="password" name="pw" id = "pw" placeholder="Password"><br>
-			<input type="radio" name="member" value="student">Student
-			<input type="radio" name="member" value="staff">Staff
-			<input type="submit" name="submit" value="Sign Up">
+			<input type="radio" name="member" value="student"><span class="w3-text-white" style="font-size:15px">Student</span>
+			<input type="radio" name="member" value="staff"><span class="w3-text-white" style="font-size:15px">Staff</span>
+			<input type="submit" name="submit" value="Sign Up"><br><br>
 
 		</form>
 
-		<p>OR</p>
+    	<span class="w3-text-white" style="font-size:20px">OR</span><br><br>
 
-		<a href="login.html">BACK</a>
+		<a href="/"><span class="w3-text-white" style="font-size:20px">Back</span></a><br><br>
 
         </center>
 	</body>

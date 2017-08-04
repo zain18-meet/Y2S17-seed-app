@@ -18,11 +18,13 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+
+
+
 @app.route('/home')
 @login_required
 def home():
 	return render_template('home.html', current_user = current_user)
-
 
 
 @app.route('/add_post', methods=['GET', 'POST'])
@@ -39,18 +41,13 @@ def add_post():
 		print(request.form.get("Y1-CS"))	
 		session.add(post)
 		session.commit()
-		return redirect(url_for('home'))
-
-
-
+		return redirect('/home')
 
 
 @app.route('/Y1')
 def y1():
-	# cs_posts = session.query(Post).filter_by(y1_cs=True).all()
 	cs_posts = session.query(Post).filter_by(y1_cs=True).all()
 	entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
-	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
 	print(cs_posts)
 	print(entrep_posts)
 	return render_template("Y1.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=1)
@@ -60,40 +57,24 @@ def y1():
 def y2():
 	cs_posts = session.query(Post).filter_by(y2_cs=True).all()
 	entrep_posts = session.query(Post).filter_by(y2_entrep=True).all()
-	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
 	print(cs_posts)
 	print(entrep_posts)
 	return render_template("Y2.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=2)
+
 
 @app.route('/Y3')
 def y3():
 	cs_posts = session.query(Post).filter_by(y3_cs=True).all()
 	entrep_posts = session.query(Post).filter_by(y3_entrep=True).all()
-	# entrep_posts = session.query(Post).filter_by(y1_entrep=True).all()
 	print(cs_posts)
 	print(entrep_posts)
 	return render_template("Y3.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=3)
+
 
 @app.route('/protected', methods=["GET"])
 @login_required
 def protected():
 	return render_template('protected.html')
-
-@app.route('/stylesheet')
-def style():
-	return render_template('stylesheet.html')
-
-# @app.route('/add-random-post')
-# def add_something():
-# 	post = Post()
-# 	post.year=3
-# 	post.topic="entrep"
-# 	post.title="random entrep post"
-# 	post.text='random post text'
-# 	session.add(post)
-# 	session.commit()
-# 	return("<h1>Done</h1>")
-
 
 ###### LOGIN #######
 
@@ -117,7 +98,7 @@ def sign_up():
 		u.set_password(new_pw)
 		session.add(u)
 		session.commit()
-		return redirect(url_for('login'))
+		return redirect('/')
 
 
 @app.route('/logout')

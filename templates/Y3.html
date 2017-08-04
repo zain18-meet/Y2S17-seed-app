@@ -7,18 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/stylesheet.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-
-<!--   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-
-  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}"> -->
 
 </head>
 
 
 <body>
+
+<style type="text/css">
+  
+  body {
+    background-color: #66c4ac
+  }
+</style>
+
 
 <!-- Links (sit on top) -->
 <div class="w3-top">
@@ -36,7 +39,7 @@
     <div class="w3-col s3">
       <a href="/Y3" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y3</span></a>
     </div>
-    {% if current_user.userpos == "staff" %}
+    {% if current_user.userpos == staff %}
     <div class="w3-col s3">
       <a href="/add_post" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">POST</span></a>
     </div>
@@ -51,33 +54,33 @@
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
  
-    <h4 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Y3 CLASSES</span></h4>
+    <h4 class="w3-center w3-padding-48"><span class="w3-tag w3-wide" style="font-size: 30px">Y3 CLASSES</span></h4>
   
     <div class="w3-row w3-center w3-card-2 w3-padding">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Entrepreneurship');" id="myLink">
-        <div class="w3-col s6 tablink">Entrepreneurship</div>
+        <div class="w3-col s6 tablink"><span style="font-size: 25px">Entrepreneurship</span></div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'CS');">
-        <div class="w3-col s6 tablink">CS</div>
+        <div class="w3-col s6 tablink"><span style="font-size: 25px">CS</span></div>
       </a>
     </div>
 
     <div id="Entrepreneurship" class="w3-container menu w3-padding-48 w3-card-2">
 
       {% for post in entrep_posts %}
-      <h5>{{post.title}}<h5><br>
-      <p>{{post.text}}</p><br>
-      <a href="{{post.url}}">{{post.url}}</a>
+      <h4>{{post.title}}<h4>
+      <p>{{post.text}}</p>
+      <a href="{{post.url}}">{{post.url}}</a><br><br>
       {% endfor %}
 
     </div>
 
     <div id="CS" class="w3-container menu w3-padding-48 w3-card-2">
 
-      {% for post in cs_posts %}
-      <h5>{{post.title}}<h5><br>
-      <p>{{post.text}}</p><br>
-      <a href="{{post.url}}">{{post.url}}</a>
+      {% for post in entrep_posts %}
+      <h4>{{post.title}}<h4>
+      <p>{{post.text}}</p>
+      <a href="{{post.url}}">{{post.url}}</a><br><br>
       {% endfor %}
 
 <script>
