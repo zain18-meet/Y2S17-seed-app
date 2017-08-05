@@ -4,11 +4,12 @@
 <head>
 
 <title>myMEET Posts</title>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/stylesheet.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}"> -->
 
 </head>
 
@@ -50,7 +51,7 @@
 	<input type="checkbox" name="Y1-E" value= "False"><span class="w3-text-white" style="font-size:12px">Y1-E</span>  
 	<input type="checkbox" name="Y2-E" value= "False"><span class="w3-text-white" style="font-size:12px">Y2-E</span>  
 	<input type="checkbox" name="Y3-E" value= "False"><span class="w3-text-white" style="font-size:12px">Y3-E</span><br><br>
-	<input type="submit" name="submit" value="Post">
+	<input class='w3-button w3-darkb w3-text-white' type="submit" name="submit" value="Post">
 </form>
 
 </center>

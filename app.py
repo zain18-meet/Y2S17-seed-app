@@ -19,7 +19,38 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
+###### LOGIN #######
 
+@app.route('/', methods=['GET', 'POST'])
+def login():
+	return login_handler(request)
+
+@app.route('/sign_up', methods=['GET','POST'])
+def sign_up():
+	if request.method == "GET":
+		return render_template('sign_up.html')
+	else:
+		return sign_up_handler(request)
+		new_name   = request.form.get('name')
+		new_email  = request.form.get('email')
+		new_pw     = request.form.get('pw')
+		new_userspos = request.form.get('member')
+
+		
+		u = User(email=new_email,name=new_name,pw_hash=new_pw,userspos=new_userspos)
+		u.set_password(new_pw)
+		session.add(u)
+		session.commit()
+		return redirect('/')
+
+
+@app.route('/logout')
+def logout():
+  return logout_handler()
+
+
+
+###### ROUTES ######
 
 @app.route('/home')
 @login_required
@@ -69,38 +100,3 @@ def y3():
 	print(cs_posts)
 	print(entrep_posts)
 	return render_template("Y3.html", cs_posts= cs_posts, entrep_posts= entrep_posts, year=3)
-
-
-@app.route('/protected', methods=["GET"])
-@login_required
-def protected():
-	return render_template('protected.html')
-
-###### LOGIN #######
-
-@app.route('/', methods=['GET', 'POST'])
-def login():
-	return login_handler(request)
-
-@app.route('/sign_up', methods=['GET','POST'])
-def sign_up():
-	if request.method == "GET":
-		return render_template('sign_up.html')
-	else:
-		return sign_up_handler(request)
-		new_name   = request.form.get('name')
-		new_email  = request.form.get('email')
-		new_pw     = request.form.get('pw')
-		new_userspos = request.form.get('member')
-
-		
-		u = User(email=new_email,name=new_name,pw_hash=new_pw,userspos=new_userspos)
-		u.set_password(new_pw)
-		session.add(u)
-		session.commit()
-		return redirect('/')
-
-
-@app.route('/logout')
-def logout():
-  return logout_handler()
