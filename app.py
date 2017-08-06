@@ -59,20 +59,28 @@ def home():
 
 
 @app.route('/add_post', methods=['GET', 'POST'])
+@login_required	
 def add_post():
-	if request.method=='GET':
-		return render_template('add_post.html')
+	if current_user.userspos == 'staff':
+		if request.method=='GET':
+			return render_template('add_post.html')
+		else:
+			post = Post(title=request.form.get("title"), text=request.form.get("text"),
+				 url= request.form.get("url"), y1_cs=request.form.get("Y1-CS"),
+				 y2_cs=request.form.get("Y2-CS"), y3_cs=request.form.get("Y3-CS"),
+				 y1_entrep=request.form.get("Y1-E"), y2_entrep=request.form.get("Y2-E"),
+				 y3_entrep=request.form.get("Y3-E"))
+			print("adding post")
+			print(request.form.get("Y1-CS"))	
+			session.add(post)
+			session.commit()
+			return redirect('/home')
 	else:
-		post = Post(title=request.form.get("title"), text=request.form.get("text"),
-			 url= request.form.get("url"), y1_cs=request.form.get("Y1-CS"),
-			 y2_cs=request.form.get("Y2-CS"), y3_cs=request.form.get("Y3-CS"),
-			 y1_entrep=request.form.get("Y1-E"), y2_entrep=request.form.get("Y2-E"),
-			 y3_entrep=request.form.get("Y3-E"))
-		print("adding post")
-		print(request.form.get("Y1-CS"))	
-		session.add(post)
-		session.commit()
-		return redirect('/home')
+		return redirect(url_for('restricted'))
+
+@app.route('/add_post/restricted')
+def restricted():
+	return render_template('redirect_student.html')
 
 
 @app.route('/Y1')

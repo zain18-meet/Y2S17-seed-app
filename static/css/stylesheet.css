@@ -39,7 +39,7 @@ body {height: 100%;font-family: "Inconsolata", sans-serif;}
 .menu {display: none;}
 body {font-family: Arial, sans-serif;background-image: url("http://meet.mit.edu/wp-content/uploads/2016/05/home-bg-new.jpg");background-size: cover;height: 100vh;}
 h1 {text-align: center; font-family: Tahoma, Arial, sans-serif; color: #FFFFFF; margin: 80px 0;}
-
+font
 
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
@@ -230,3 +230,13 @@ h1 {text-align: center; font-family: Tahoma, Arial, sans-serif; color: #FFFFFF; 
 .w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}
 .w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#bbb!important}
 
+
+@font-face {
+        font-family: 'archerbold';
+        src: url(url_for('static', filename='Archer Bold.otf'));
+    }
+
+#archer_bold {
+	font-family: archerbold;
+
+}

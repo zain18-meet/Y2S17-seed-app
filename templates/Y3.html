@@ -25,23 +25,23 @@
 <div class="w3-top">
   <div class="w3-row w3-padding w3-darkb">
     <div class="w3-col s3">
-      <a href="/home" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">HOME</span></a>
-
+      <a href="/home" class="w3-button w3-block w3-darkb w3-text-white">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y1" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y1</span></a>
+      <a href="/Y1" class="w3-button w3-block w3-darkb w3-text-white">Y1</a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y2" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y2</span></a>
+      <a href="/Y2" class="w3-button w3-block w3-darkb w3-text-white">Y2</a>
     </div>
     <div class="w3-col s3">
-      <a href="/Y3" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">Y3</span></a>
+      <a href="/Y3" class="w3-button w3-block w3-darkb w3-text-white">Y3</a>
     </div>
-    {% if current_user.userpos == staff %}
     <div class="w3-col s3">
-      <a href="/add_post" class="w3-button w3-block w3-darkb"><span class="w3-text-white" style="font-size:15px">POST</span></a>
+      <a href="/add_post" class="w3-button w3-block w3-darkb w3-text-white">POST</a>
+      </div>
+    <div class="w3-col s3">
+      <a href="/logout" class="w3-button w3-block w3-darkb w3-text-white">LOGOUT</a>
     </div>
-    {% endif %}
   </div>
 </div>
 
@@ -66,8 +66,8 @@
     <div id="Entrepreneurship" class="w3-container menu w3-padding-48 w3-card-2">
 
       {% for post in entrep_posts %}
-      <h4>{{post.title}}<h4>
-      <p>{{post.text}}</p>
+      <h4 class="w3-text-white">{{post.title}}<h4>
+      <p class="w3-text-white">{{post.text}}</p>
       <a href="{{post.url}}">{{post.url}}</a><br><br>
       {% endfor %}
 
@@ -76,8 +76,8 @@
     <div id="CS" class="w3-container menu w3-padding-48 w3-card-2">
 
       {% for post in entrep_posts %}
-      <h4>{{post.title}}<h4>
-      <p>{{post.text}}</p>
+      <h4 class="w3-text-white">{{post.title}}<h4>
+      <p class="w3-text-white">{{post.text}}</p>
       <a href="{{post.url}}">{{post.url}}</a><br><br>
       {% endfor %}
 
